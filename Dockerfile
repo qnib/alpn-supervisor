@@ -4,7 +4,10 @@ RUN apk update && apk upgrade && \
     apk add py-pip && \
     pip install --upgrade pip && \
     pip install supervisor && \
+    mkdir -p /var/log/supervisor/ && \
     rm -rf /var/cache/apk/*
 ADD etc/supervisord.conf /etc/
-ADD opt/qnib/supervisor/start.sh /opt/qnib/supervisor/
-CMD [ "/opt/qnib/supervisor/start.sh", "-n" ]
+ADD opt/qnib/supervisor/bin/start.sh /opt/qnib/supervisor/bin/
+CMD [ "/opt/qnib/supervisor/bin/start.sh", "-n" ]
+RUN echo "/opt/qnib/supervisor/bin/start.sh" >> /root/.bash_history && \
+    echo "supervisorctl status" >> /root/.bash_history
