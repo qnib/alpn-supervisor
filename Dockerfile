@@ -1,6 +1,7 @@
 FROM qnib/alpn-base:edge
 
-RUN apk add py-pip && \
+RUN apk update && apk upgrade && \
+    apk add py-pip && \
     pip install --upgrade pip && \
     pip install supervisor && \
     rm -rf /var/cache/apk/*
