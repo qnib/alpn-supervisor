@@ -7,3 +7,4 @@ RUN apk update && apk upgrade && \
     rm -rf /var/cache/apk/*
 ADD etc/supervisord.conf /etc/
 ADD opt/qnib/supervisor/start.sh /opt/qnib/supervisor/
+CMD [ "/opt/qnib/supervisor/start.sh", "-n" ]
