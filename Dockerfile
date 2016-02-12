@@ -1,4 +1,4 @@
-FROM qnib/alpn-base
+FROM qnib/alpn-base:edge
 
 ENV DUMB_INIT_VER=1.0.0
 RUN apk update && apk upgrade && \
