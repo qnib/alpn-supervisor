@@ -1,4 +1,4 @@
-FROM qnib/alpn-base
+FROM qnib/alpn-base:3.2
 
 RUN apk add --update py-pip \
  && pip install --upgrade pip \
