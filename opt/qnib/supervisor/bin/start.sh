@@ -49,5 +49,5 @@ if [ "X$1" == "X" ];then
    echo "# supervisorctl status"
    supervisorctl status
 else
-   supervisord -n -c /etc/supervisord.conf
+   exec supervisord -n -c /etc/supervisord.conf
 fi
